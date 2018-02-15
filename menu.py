@@ -4,12 +4,9 @@ import textscroller_vertical
 import random
 import sys
 import os.path
-import tipptrainer
-import mathematik_multiplizieren
-import mathematik_addieren
-import mathematik_subtrahieren
-import mathematik_dividieren
-
+from tipptrainer import tipptrainer 
+from geographie import geographie
+import mathematik
 
 class Settings(object):
     menu = {"root":["Spielen", "Credits", "Verlassen"],
@@ -150,28 +147,28 @@ class PygView(object):
                             tipptrainer.start() 
                             print("bye") 
                         elif result == "Multiplizieren":
-                            pygame.quit()
-                            mathematik_multiplizieren.start()
+                            pygame.quit() 
+                            mathematik.PygView(operator_game = "*").run()
                             print("bye") 
                             self.__init__()
                         elif result == "Addieren":
                             pygame.quit()
-                            mathematik_addieren.start()
+                            mathematik.PygView(operator_game = "+").run()
                             print("bye") 
                             self.__init__()
                         elif result == "Subtrahieren":
                             pygame.quit()
-                            mathematik_subtrahieren.start()
+                            mathematik.PygView(operator_game = "-").run()
                             print("bye") 
                             self.__init__()
                         elif result == "Dividieren":
                             pygame.quit()
-                            mathematik_dividieren.start()
+                            mathematik.PygView(operator_game = ":").run()
                             print("bye") 
                             self.__init__()
                         elif result == "Geographie":
                             pygame.quit()
-                            # START GEOGRAPHIE  
+                            geographie.start() 
                             print("bye") 
                         elif result == "Simon HEPPNER":
                             text="Programmer of this\ngame. Likes Yoghurt!\n:D"
@@ -186,7 +183,7 @@ class PygView(object):
 
             milliseconds = self.clock.tick(self.fps)
             self.playtime += milliseconds / 1000.0 
-            self.draw_text("Lernprogramm", 230, 0, (random.randint(0,255),random.randint(0,255), random.randint(0,255)))
+            self.draw_text("Lernprogramm - EasyLearning", 130, 0, (random.randint(0,255),random.randint(0,255), random.randint(0,255)))
             pygame.draw.line(self.screen,(random.randint(0,255),random.randint(0,255), random.randint(0,255)),(50,self.height - 80),(self.width -50,self.height - 80) ,3)             
             self.paint()
             pygame.display.flip()
