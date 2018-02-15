@@ -171,10 +171,10 @@ class PygView(object):
                             geographie.start() 
                             print("bye") 
                         elif result == "Simon HEPPNER":
-                            text="Programmer of this\ngame. Likes Yoghurt!\n:D"
+                            text="Programmierer dieses Spieles!"
                             textscroller_vertical.PygView(text, self.width, self.height).run()
                         elif result == "Horst JENS":
-                            text="Programming-Teacher of\nSimon HEPPNER.\nIs pleased to contribute!"
+                            text="Progammier-Lehrer von \nSimon HEPPNER (spielend-programmieren.at).\nFühlt sich geehrt teilnehmen\nzu können"
                             textscroller_vertical.PygView(text, self.width, self.height).run()
                         elif result=="Verlassen":
                             pygame.quit()
